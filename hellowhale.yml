@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hellowhale
+spec:
+   replicas: 5
+   template:
+      metadata:
+         labels:
+            app: hellowhale
+      spec:
+        containers:
+        - name: hellowhale
+         image: kensberg/hellowhale:latest
+         ports:
+           - containerPort: 80
